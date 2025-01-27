@@ -1,0 +1,29 @@
+@import url("header.css");
+@import url("main.css");
+@import url("mobile.css");
+@import url("others.css");
+
+:root{
+    --accent: #5D3FD3;
+    --accent-rgb: 93, 63, 211;
+    --back: #121212;
+    --back-rgb: 18, 18, 18;
+    --txt: #E0E0E0;
+}
+
+body{
+    font-family: 'Arial', sans-serif;
+    background-color: var(--back);
+    color: var(--txt);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    text-align: center;
+    padding: 0.5rem;
+    background-color: var(--accent);
+    color: white;
+    font-size: 0.8rem;
+}

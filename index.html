@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>wxn0brP - Code Artisan</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 </head>
+
 <body>
+    <div id="flying-object"></div>
     <header>
         <a href="#home" class="logo" aria-label="wxn0brP Code Artisan" data-scroll>wxn0brP Code Artisan</a>
         <div class="hamburger">
@@ -32,18 +35,28 @@
 
     <main>
         <section id="home" class="hero">
-            <h1>Crafting Digital Experiences</h1>
-            <p>Full-stack sorcerer | Anime connoisseur | Weaving code into art</p>
-            <a href="#about" class="cta-button" data-scroll>Explore My Digital Realm</a>
+            <article>
+                <h1>Crafting Digital Experiences</h1>
+                <p>Full-stack sorcerer | Anime connoisseur | Weaving code into art</p>
+                <a href="#about" class="cta-button" data-scroll>Explore My Digital Realm</a>
+            </article>
         </section>
 
         <div class="content">
             <section id="about">
                 <h2>About Me</h2>
-                <p>Greetings, fellow digital explorers! I'm wxn0brP, a passionate full-stack developer with a flair for creating elegant solutions to complex problems. By day, I craft intricate code structures; by night, I immerse myself in the vibrant world of anime.</p>
-                <p>My journey in tech began with a simple "Hello, World!" and has since evolved into a quest to push the boundaries of what's possible in web and application development. I thrive on the challenge of learning new technologies and applying them to create innovative projects.</p>
-                <p>When I'm not debugging or deploying, you'll find me analyzing the latest anime series, drawing parallels between plot twists and code architecture. This unique blend of interests fuels my creativity and problem-solving skills, allowing me to approach development from fresh, unexpected angles.</p>
-                <p>Join me on this exciting adventure as we transform ideas into reality, one line of code at a time!</p>
+                <p>Greetings, fellow digital explorers! I'm wxn0brP, a passionate full-stack developer with a flair for
+                    creating elegant solutions to complex problems. By day, I craft intricate code structures; by night,
+                    I immerse myself in the vibrant world of anime.</p>
+                <p>My journey in tech began with a simple "Hello, World!" and has since evolved into a quest to push the
+                    boundaries of what's possible in web and application development. I thrive on the challenge of
+                    learning new technologies and applying them to create innovative projects.</p>
+                <p>When I'm not debugging or deploying, you'll find me analyzing the latest anime series, drawing
+                    parallels between plot twists and code architecture. This unique blend of interests fuels my
+                    creativity and problem-solving skills, allowing me to approach development from fresh, unexpected
+                    angles.</p>
+                <p>Join me on this exciting adventure as we transform ideas into reality, one line of code at a time!
+                </p>
             </section>
 
             <section id="projects">
@@ -53,11 +66,12 @@
                     <p>A versatile chat application that transcends platforms:</p>
                     <ul>
                         <li>Robust Node.js server backbone</li>
-                        <li>Sleek Vanilla JavaScript front-end</li>
+                        <li>Sleek Vanilla TypeScript front-end</li>
                         <li>Powerful Electron desktop incarnation</li>
                         <li>Seamless React Native mobile experience</li>
                     </ul>
-                    <a href="https://github.com/wxn0brP/fusion-chat" class="cta-button" target="_blank">Unveil the Magic</a>
+                    <a href="https://github.com/wxn0brP/fusion-chat" class="cta-button" target="_blank">Unveil the
+                        Magic</a>
                 </div>
                 <div class="project">
                     <h3>database: Data Alchemy Unleashed</h3>
@@ -65,8 +79,20 @@
                     <ul>
                         <li>Custom Node.js database implementation</li>
                         <li>Lightning-fast Node.js server and client</li>
+                        <li>Powerful TypeScript</li>
                     </ul>
-                    <a href="https://github.com/wxn0brP/database" class="cta-button" target="_blank">Explore the Data Realm</a>
+                    <p>Sub projects:</p>
+                    <ul class="sub-projects">
+                        <li>
+                            <a href="https://github.com/wxn0brP/database-server" target="_blank">Server</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/wxn0brP/database-cli" target="_blank">Simple CLI</a>
+                        </li>
+                    </ul>
+
+                    <a href="https://github.com/wxn0brP/database" class="cta-button" target="_blank">Explore the Data
+                        Realm</a>
                 </div>
             </section>
 
@@ -75,13 +101,13 @@
                 <div class="skills-list">
                     <span class="skill-tag">JavaScript</span>
                     <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Git</span>
                     <span class="skill-tag">Vue</span>
                     <span class="skill-tag">Svelte</span>
                     <span class="skill-tag">Express.js</span>
                     <span class="skill-tag">Socket.io</span>
                     <span class="skill-tag">React</span>
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">Git</span>
                 </div>
                 <p>And more arcane technologies...</p>
             </section>
@@ -89,9 +115,10 @@
     </main>
 
     <footer>
-        <p>© 2024 wxn0brP | Code Artisan & Anime Aficionado 💜</p>
+        <p>© 2025 wxn0brP | Code Artisan & Anime Aficionado 💜</p>
     </footer>
 
     <script src="index.js"></script>
 </body>
+
 </html>
