@@ -1,9 +1,9 @@
-@media screen and (max-width: 768px){
-    .hamburger{
+@media screen and (max-width: 768px) {
+    .hamburger {
         display: flex;
     }
 
-    nav{
+    nav {
         position: absolute;
         top: 100%;
         left: 0;
@@ -14,20 +14,20 @@
         padding: 1rem 0;
     }
 
-    nav.active{
+    nav.active {
         display: block;
     }
 
-    nav ul{
+    nav ul {
         flex-direction: column;
         align-items: center;
     }
 
-    nav ul li{
+    nav ul li {
         margin: 0.5rem 0;
     }
 
-    .hero h1{
+    .hero h1 {
         font-size: 2rem;
     }
 

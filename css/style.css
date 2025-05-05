@@ -3,7 +3,7 @@
 @import url("mobile.css");
 @import url("others.css");
 
-:root{
+:root {
     --accent: #5D3FD3;
     --accent-rgb: 93, 63, 211;
     --back: #121212;
@@ -11,8 +11,8 @@
     --txt: #E0E0E0;
 }
 
-body{
-    font-family: 'Arial', sans-serif;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--back);
     color: var(--txt);
     line-height: 1.6;
@@ -20,7 +20,7 @@ body{
     padding: 0;
 }
 
-footer{
+footer {
     text-align: center;
     padding: 0.5rem;
     background-color: var(--accent);

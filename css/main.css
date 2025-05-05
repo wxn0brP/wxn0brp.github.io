@@ -1,18 +1,19 @@
-main{
+main {
     margin-top: 4rem;
 }
 
-section{
+section {
     margin-bottom: 4rem;
     padding-bottom: 2rem;
     animation: fadeInUp 1s ease-out;
 }
 
-h1, h2{
+h1,
+h2 {
     color: var(--accent);
 }
 
-.hero{
+.hero {
     text-align: center;
     width: 100%;
     height: 700px;
@@ -27,7 +28,7 @@ h1, h2{
     align-items: center;
 }
 
-.hero::after{
+.hero::after {
     content: '';
     position: absolute;
     top: 0;
@@ -38,7 +39,7 @@ h1, h2{
     background-size: cover;
     background-position: center;
     opacity: 0.9;
-    z-index: -1;
+    z-index: 1;
     animation: fadeInLeft 2.3s ease;
 }
 
@@ -47,9 +48,10 @@ h1, h2{
     width: 700px;
     border-radius: 2rem;
     padding-bottom: 1rem;
+    z-index: 2;
 }
 
-.hero h1{
+.hero h1 {
     font-size: 3rem;
     margin-block: 1rem;
     font-style: italic;
@@ -64,13 +66,13 @@ h1, h2{
         0 0 37px var(--accent);
 }
 
-.content{
+.content {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-.cta-button{
+.cta-button {
     display: inline-block;
     background-color: var(--accent);
     color: var(--txt);
@@ -82,13 +84,13 @@ h1, h2{
     overflow: hidden;
 }
 
-.cta-button:hover{
+.cta-button:hover {
     background-color: #4B2FA3;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(var(--accent-rgb), 0.4);
 }
 
-.cta-button::after{
+.cta-button::after {
     content: '';
     position: absolute;
     top: -50%;
@@ -100,11 +102,11 @@ h1, h2{
     transition: all 0.3s ease;
 }
 
-.cta-button:hover::after{
+.cta-button:hover::after {
     left: 100%;
 }
 
-.project{
+.project {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
     padding: 1rem;
@@ -112,17 +114,17 @@ h1, h2{
     transition: all 0.3s ease;
 }
 
-.project:hover{
+.project:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(var(--accent-rgb), 0.2);
 }
 
-.project h3{
+.project h3 {
     color: var(--accent);
 }
 
-.project > p + ul {
-    margin-top: -15px;
+.project>p+ul {
+    margin-block: -15px;
 }
 
 .sub-projects li a {
@@ -134,13 +136,13 @@ h1, h2{
     color: var(--accent);
 }
 
-.skills-list{
+.skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.skill-tag{
+.skill-tag {
     background-color: var(--accent);
     color: white;
     padding: 0.25rem 0.5rem;
@@ -149,7 +151,7 @@ h1, h2{
     transition: all 0.3s ease;
 }
 
-.skill-tag:hover{
+.skill-tag:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.6);
 }
