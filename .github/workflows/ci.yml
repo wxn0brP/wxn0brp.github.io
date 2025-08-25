@@ -1,4 +1,4 @@
-name: Build and Deploy SCSS
+name: Build
 
 on:
   push:
@@ -26,16 +26,10 @@ jobs:
 
       - name: Compile SCSS
         run: |
-          sass scss:css
-
-      - name: Prepare deployment folder
-        run: |
-          mkdir deploy
-          rsync -av --exclude='scss' ./ ./deploy
-          rm -rf deploy/scss
+          sass scss/style.scss public/style.css
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./deploy
+          publish_dir: ./public
