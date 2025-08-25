@@ -1,0 +1,139 @@
+main {
+  margin-top: 4rem;
+}
+
+section {
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+h1,
+h2 {
+  color: var(--accent);
+}
+
+.hero {
+  text-align: center;
+  width: 100%;
+  height: 700px;
+  box-sizing: border-box;
+  margin-bottom: 4rem;
+  margin-top: -2px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../banner.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  z-index: 1;
+  animation: fadeInLeft 2.3s ease;
+}
+.hero article {
+  background-color: rgba(var(--back-rgb), 0.7);
+  width: 700px;
+  border-radius: 2rem;
+  padding-bottom: 1rem;
+  z-index: 2;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-block: 1rem;
+  font-style: italic;
+  text-shadow: 0 0 5px var(--txt), 0 0 5px var(--txt), 0 0 5px var(--txt), 0 0 10px var(--accent), 0 0 17px var(--accent), 0 0 20px var(--accent), 0 0 25px var(--accent), 0 0 37px var(--accent);
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--txt);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.cta-button:hover {
+  background-color: #4B2FA3;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(var(--accent-rgb), 0.4);
+}
+.cta-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+.cta-button:hover::after {
+  left: 100%;
+}
+
+.project {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(var(--accent-rgb), 0.2);
+}
+.project h3 {
+  color: var(--accent);
+}
+.project > p + ul {
+  margin-block: -15px;
+}
+
+.sub-projects li a {
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+.sub-projects li a:hover {
+  color: var(--accent);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.skill-tag:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.6);
+}
+
+/*# sourceMappingURL=main.css.map */
