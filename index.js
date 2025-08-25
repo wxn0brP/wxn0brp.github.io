@@ -13,7 +13,9 @@ document.querySelectorAll(`a[data-scroll]`).forEach(anchor => {
     });
 });
 
+/** @type {HTMLDivElement} */
 const hamburger = document.querySelector(".hamburger");
+/** @type {HTMLDivElement} */
 const nav = document.querySelector("nav");
 
 hamburger.addEventListener("click", () => {
@@ -21,6 +23,7 @@ hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
 });
 
+/** @type {HTMLDivElement} */
 const flyingObject = document.querySelector("#flying-object");
 let mouseX = 0;
 let mouseY = 0;
@@ -70,3 +73,37 @@ function animate() {
 }
 
 animate();
+
+fetch("https://api.github.com/users/wxn0brP/repos?per_page=100").then(res => res.json()).then(repos => {
+    /**
+     * @param {string} qs querySelector
+     * @param {string} prefix
+     * @param {string} [npm]
+     */
+    function render(qs, prefix, npm) {
+        /** @type {HTMLUListElement} */
+        let list = document.querySelector(qs);
+        list.innerHTML = "";
+        const filtered = repos.filter(r => r.name.startsWith(prefix + "-"))
+        if (npm) {
+            filtered.push({
+                name: "NPM package",
+                html_url: `https://www.npmjs.com/package/${npm}`
+            })
+        }
+        filtered.sort((a, b) => a.name.localeCompare(b.name))
+            .forEach(r => {
+                const li = document.createElement("li");
+                li.innerHTML = `<a href="${r.html_url}" target="_blank">${r.name}</a>`;
+                if (r.description) {
+                    const desc = r.description;
+                    li.innerHTML += " - ";
+                    li.innerHTML += desc.startsWith(prefix) ? desc.replace(prefix, "") : desc;
+                }
+                list.appendChild(li);
+            });
+    }
+
+    render("#valtheradb-links", "ValtheraDB", "@wxn0brp/db");
+    render("#vql-links", "VQL", "@wxn0brp/vql");
+})
