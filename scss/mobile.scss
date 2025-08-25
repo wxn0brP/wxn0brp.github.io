@@ -12,26 +12,29 @@
         backdrop-filter: blur(10px);
         display: none;
         padding: 1rem 0;
+
+        &.active {
+            display: block;
+        }
+
+        ul {
+            flex-direction: column;
+            align-items: center;
+
+            li {
+                margin: 0.5rem 0;
+            }
+        }
     }
 
-    nav.active {
-        display: block;
+    .hero {
+        h1 {
+            font-size: 2rem;
+        }
+
+        article {
+            width: 90%;
+        }
     }
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero article {
-        width: 90%;
-    }
 }
