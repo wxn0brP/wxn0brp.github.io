@@ -106,4 +106,17 @@ fetch("https://api.github.com/users/wxn0brP/repos?per_page=100").then(res => res
 
     render("#valtheradb-links", "ValtheraDB", "@wxn0brp/db");
     render("#vql-links", "VQL", "@wxn0brp/vql");
-})
+});
+
+function scroll() {
+    const { hash } = window.location;
+    if (!hash) return;
+    const el = document.querySelector(hash);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.parentElement.classList.add("highlighted");
+    setTimeout(() => el.parentElement.classList.remove("highlighted"), 2100);
+}
+
+window.addEventListener("hashchange", scroll);
+setTimeout(scroll, 1000);
