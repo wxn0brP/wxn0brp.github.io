@@ -94,7 +94,7 @@ fetch("https://api.github.com/users/wxn0brP/repos?per_page=100").then(res => res
         filtered.sort((a, b) => a.name.localeCompare(b.name))
             .forEach(r => {
                 const li = document.createElement("li");
-                li.innerHTML = `<a href="${r.html_url}" target="_blank">${r.name}</a>`;
+                li.innerHTML = `<a href="${r.html_url}" target="_blank">${r.name.replace(prefix + "-", "")}</a>`;
                 if (r.description) {
                     const desc = r.description;
                     li.innerHTML += " - ";
