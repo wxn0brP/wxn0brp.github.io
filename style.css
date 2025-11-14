@@ -56,6 +56,11 @@ nav ul li a::after {
 nav ul li a:hover::after {
   transform: scaleX(1);
 }
+nav ul li a #github-icon {
+  height: 20px;
+  margin-left: 7px;
+  margin-top: 3px;
+}
 
 .hamburger {
   display: none;
