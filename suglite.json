@@ -1,5 +1,11 @@
 {
     "cmd": "sass scss/style.scss public/style.css",
+    "server": 12418,
+    "server_map": {
+        "dir": {
+            "/": "public"
+        }
+    },
     "watch": [
         "scss"
     ]
