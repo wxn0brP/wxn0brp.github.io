@@ -74,7 +74,27 @@ function animate() {
 
 animate();
 
-fetch("https://api.github.com/users/wxn0brP/repos?per_page=100").then(res => res.json()).then(repos => {
+const cacheKey = "wxn/main/data";
+const ttl = 60 * 60 * 1000; // hour
+
+function loadRepos() {
+    const cached = localStorage.getItem(cacheKey);
+    if (cached) {
+        const data = JSON.parse(cached);
+        if (Date.now() - data.timestamp < ttl) return renderRepos(data.data);
+        else localStorage.removeItem(cacheKey);
+    }
+
+    fetch("https://api.github.com/users/wxn0brP/repos?per_page=100")
+        .then(res => res.json())
+        .then(data => {
+            localStorage.setItem(cacheKey, JSON.stringify({ data, timestamp: Date.now() }));
+            renderRepos(data);
+        });
+}
+loadRepos();
+
+function renderRepos(repos) {
     /**
      * @param {string} qs querySelector
      * @param {string} prefix
@@ -98,7 +118,7 @@ fetch("https://api.github.com/users/wxn0brP/repos?per_page=100").then(res => res
                 if (r.description) {
                     const desc = r.description;
                     li.innerHTML += " - ";
-                    li.innerHTML += desc.startsWith(prefix) ? desc.replace(prefix, "") : desc;
+                    li.innerHTML += desc.startsWith(prefix) ? desc : desc;
                 }
                 list.appendChild(li);
             });
@@ -106,7 +126,7 @@ fetch("https://api.github.com/users/wxn0brP/repos?per_page=100").then(res => res
 
     render("#valtheradb-links", "ValtheraDB", "@wxn0brp/db");
     render("#vql-links", "VQL", "@wxn0brp/vql");
-});
+}
 
 function scroll() {
     const { hash } = window.location;

@@ -12,17 +12,17 @@
 
 @keyframes fadeInLeft {
     0% {
-        opacity: 0;
+        opacity: 0.6;
         transform: translateX(-120%) scaleY(0.95);
     }
 
     70% {
-        opacity: 0.6;
+        opacity: 0.9;
         transform: translateX(3%);
     }
 
     100% {
-        opacity: 0.9;
+        opacity: 1;
         transform: translateX(0);
     }
 }
