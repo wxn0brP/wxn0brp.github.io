@@ -20,7 +20,7 @@ jobs:
 
       - name: Compile SCSS
         run: |
-          bunx sass scss/style.scss public/style.css
+          bunx sass scss/style.scss public/style.css -s compressed
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

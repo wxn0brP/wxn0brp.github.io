@@ -1,5 +1,5 @@
 {
-    "cmd": "sass scss/style.scss public/style.css",
+    "cmd": "sass scss/style.scss public/style.css -s compressed",
     "server": 12418,
     "server_map": {
         "dir": {
