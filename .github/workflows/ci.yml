@@ -7,22 +7,34 @@ on:
 
   workflow_dispatch:
 
+concurrency:
+  group: build
+  cancel-in-progress: true
+
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Set up Bun
+      - name: Install Bun
         uses: oven-sh/setup-bun@v2
 
-      - name: Compile SCSS
+      - name: Install Pressure
         run: |
-          bunx sass scss/style.scss public/style.css -s compressed
+          git clone https://github.com/wxn0brP/pressure.git
+          cd pressure
+          bun install
 
-      - name: Deploy to GitHub Pages
+      - name: Build project
+        run: |
+          bun run pressure/src/index.ts
+
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
