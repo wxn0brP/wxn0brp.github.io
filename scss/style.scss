@@ -3,21 +3,28 @@
 @use "mobile";
 @use "others";
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
 :root {
-    --accent: #5D3FD3;
-    --accent-rgb: 93, 63, 211;
-    --back: #121212;
-    --back-rgb: 18, 18, 18;
-    --txt: #E0E0E0;
+    --accent: #7c4dff;
+    --accent-rgb: 124, 77, 255;
+    --secondary: #00e5ff;
+    --secondary-rgb: 0, 229, 255;
+    --back: #0a0a0c;
+    --back-rgb: 10, 10, 12;
+    --card-bg: #151518;
+    --txt: #ececf1;
+    --txt-muted: #a1a1aa;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--back);
     color: var(--txt);
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 footer {
