@@ -1,7 +1,7 @@
 import "../scss/style.scss";
 import { loadRepos } from "./repo";
-import { animate } from "./ui";
 import "./scroll";
+import { animate } from "./ui";
 
 animate();
 loadRepos();

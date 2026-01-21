@@ -23,6 +23,12 @@ document.addEventListener("mousemove", (event) => {
 });
 
 export function animate() {
+    const hasMouse =
+        window.matchMedia("(any-hover: hover)").matches &&
+        window.matchMedia("(any-pointer: fine)").matches;
+
+    flyingObject.style.display = hasMouse ? "" : "none";
+
     objectX += (mouseX - objectX) * latency;
     objectY += (mouseY - objectY) * latency;
 
