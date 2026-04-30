@@ -1,5 +1,3 @@
-
-
 const hamburger = document.querySelector<HTMLDivElement>(".hamburger");
 const nav = document.querySelector<HTMLDivElement>("nav");
 

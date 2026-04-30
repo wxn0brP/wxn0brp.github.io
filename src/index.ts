@@ -1,3 +1,4 @@
+// @ts-ignore
 import "../scss/style.scss";
 import { loadRepos } from "./repo";
 import "./scroll";

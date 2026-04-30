@@ -1,0 +1,14 @@
+{
+    cmd: "pressure",
+    server: 12418,
+    server_map: {
+        dir: {
+            "/": "public",
+        },
+    },
+    watch: [
+        "scss",
+        "html",
+        "src",
+    ],
+}
