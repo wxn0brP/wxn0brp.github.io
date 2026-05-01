@@ -133,8 +133,7 @@ p {
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    margin-block: 2rem;
 
     &:hover {
         transform: translateY(-10px);
@@ -153,44 +152,24 @@ p {
         transition: color 0.3s ease;
     }
 
-    p {
-        margin-bottom: 1.5rem;
-        flex-grow: 1;
-    }
-
-    ul {
-        padding-left: 1.2rem;
-        margin-bottom: 1.5rem;
-        color: var(--txt-muted);
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-    }
-
     .sub-projects {
-        list-style: none;
         padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
 
-        li {
-            margin: 0;
+        a {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: var(--txt);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
 
-            a {
-                font-size: 0.9rem;
-                color: var(--txt);
-                background: rgba(255, 255, 255, 0.05);
-                padding: 0.3rem 0.8rem;
-                border-radius: 20px;
-                text-decoration: none;
-                transition: all 0.2s;
-
-                &:hover {
-                    background: var(--accent);
-                    color: white;
-                }
+            &:hover {
+                background: var(--accent);
+                color: white;
             }
         }
     }

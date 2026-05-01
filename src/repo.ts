@@ -25,7 +25,7 @@ export function loadRepos() {
 
 function renderRepos(repos: Repo[]) {
     function render(qs: string, prefix: string, npm: string) {
-        let list = document.querySelector<HTMLUListElement>(qs);
+        let list = document.querySelector<HTMLDivElement>(qs);
         list.innerHTML = "";
         const filtered = repos.filter(r => r.name.startsWith(prefix + "-"))
         if (npm) {
@@ -36,14 +36,7 @@ function renderRepos(repos: Repo[]) {
         }
         filtered.sort((a, b) => a.name.localeCompare(b.name))
             .forEach(r => {
-                const li = document.createElement("li");
-                li.innerHTML = `<a href="${r.html_url}" target="_blank">${r.name.replace(prefix + "-", "")}</a>`;
-                if (r.description) {
-                    const desc = r.description;
-                    li.innerHTML += " - ";
-                    li.innerHTML += desc.startsWith(prefix) ? desc : desc;
-                }
-                list.appendChild(li);
+                list.innerHTML += `<a href="${r.html_url}" target="_blank">${r.name.replace(prefix + "-", "")}</a>`;
             });
     }
 
