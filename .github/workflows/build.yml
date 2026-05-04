@@ -1,0 +1,24 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+concurrency:
+  group: build
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Run pressure
+        uses: wxn0brP/pressure@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
