@@ -15,29 +15,50 @@ export function loadRepos() {
         else localStorage.removeItem(cacheKey);
     }
 
-    fetch("https://api.github.com/users/wxn0brP/repos?per_page=100")
-        .then(res => res.json())
-        .then(data => {
-            localStorage.setItem(cacheKey, JSON.stringify({ data, timestamp: Date.now() }));
-            renderRepos(data);
-        });
+    getRepos().then(repos => {
+        localStorage.setItem(cacheKey, JSON.stringify({
+            timestamp: Date.now(),
+            data: repos
+        }));
+        renderRepos(repos);
+    });
+}
+
+export async function getRepos(): Promise<Repo[]> {
+    let page = 1;
+    const all: Repo[] = [];
+
+    while (true) {
+        const res = await fetch(`https://api.github.com/users/wxn0brP/repos?per_page=100&page=${page}`);
+
+        const data: Repo[] = await res.json();
+        if (data.length === 0) break;
+
+        all.push(...data);
+        page++;
+    }
+
+    return all;
+}
+
+export function renderProjectRepos(repos: Repo[], prefix: string, npm: string) {
+    const filtered = repos.filter(r => r.name.startsWith(prefix + "-"));
+
+    filtered.push({
+        name: "NPM package",
+        html_url: `https://www.npmjs.com/package/${npm}`
+    });
+
+    return filtered
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map(r =>
+            `<a href="${r.html_url}" target="_blank">${r.name.replace(prefix + "-", "")}</a>`
+        ).join("\n");
 }
 
 function renderRepos(repos: Repo[]) {
     function render(qs: string, prefix: string, npm: string) {
-        let list = document.querySelector<HTMLDivElement>(qs);
-        list.innerHTML = "";
-        const filtered = repos.filter(r => r.name.startsWith(prefix + "-"))
-        if (npm) {
-            filtered.push({
-                name: "NPM package",
-                html_url: `https://www.npmjs.com/package/${npm}`
-            })
-        }
-        filtered.sort((a, b) => a.name.localeCompare(b.name))
-            .forEach(r => {
-                list.innerHTML += `<a href="${r.html_url}" target="_blank">${r.name.replace(prefix + "-", "")}</a>`;
-            });
+        document.querySelector(qs).innerHTML = renderProjectRepos(repos, prefix, npm);
     }
 
     render("#valtheradb-links", "ValtheraDB", "@wxn0brp/db");

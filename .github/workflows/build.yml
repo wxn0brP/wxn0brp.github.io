@@ -22,3 +22,4 @@ jobs:
         uses: wxn0brP/pressure@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pre: "bun run src/ssr.ts"
